@@ -4,10 +4,10 @@ pipeline {
     stages {
 
         stage('Checkout') {
-            steps {
-                git 'https://github.com/Anjali081299/dotnet-jenkins-demo.git'
-            }
-        }
+    steps {
+        git branch: 'main', url: 'https://github.com/Anjali081299/dotnet-jenkins-demo.git'
+    }
+}
 
         stage('Restore') {
             steps {
