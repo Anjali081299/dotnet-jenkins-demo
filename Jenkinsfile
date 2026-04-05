@@ -32,5 +32,12 @@ pipeline {
                 bat 'dotnet publish -c Release -o publish'
             }
         }
+        stage('Deploy to IIS') {
+    steps {
+        bat '''
+        xcopy /E /Y publish C:\\inetpub\\wwwroot\\myapp\\
+        '''
+    }
+}
     }
 }
